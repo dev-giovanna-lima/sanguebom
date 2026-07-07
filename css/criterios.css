@@ -230,13 +230,24 @@ body {
 }
 
 @media (max-width: 1024px) {
-  .home{
+  .home {
+    display: flex;
+    align-items: center;
     height: 380px;
   }
-  
+
   .containerUm {
     padding: 0;
+    margin-left: 20px;
     text-align: left;
+  }
+
+  .containerUm h1{
+    font-size: 3rem;
+  }
+
+  .containerUm p{
+    font-size: 1rem;
   }
 
   .navBar {
