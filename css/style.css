@@ -1,0 +1,618 @@
+/* ==========================================================
+   Sangue Bom — Seções (Requisitos, Benefícios, Histórias, Patrocinadores)
+   Apenas HTML + CSS puro. HTML semântico e acessível.
+   ========================================================== */
+
+:root {
+  --vermelho: #E11F26;
+  --vermelho-escuro: #B0181D;
+  --vermelho-claro: #FDEAEA;
+  --tinta: #1B1B1B;
+  --cinza: #595E68;
+  --fundo-alt: #FAFAFA;
+  --branco: #FFFFFF;
+  --borda: #ECECEC;
+
+  --fonte-titulo: "MuseoModerno", sans-serif;
+  --fonte-texto: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --raio-md: 16px;
+  --sombra-cartao: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte-texto);
+  color: var(--tinta);
+  background: var(--branco);
+}
+
+a {
+  color: inherit;
+}
+
+/* Foco visível para navegação por teclado */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--vermelho-escuro);
+  outline-offset: 3px;
+}
+
+.contentor {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.secao {
+  padding: 4rem 0;
+}
+
+.secao + .secao {
+  border-top: 1px solid var(--borda);
+}
+
+.cabecalho-secao {
+  text-align: center;
+}
+
+.rotulo {
+  margin: 0 0 0.5rem;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--vermelho);
+}
+
+.titulo {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.25;
+  color: var(--tinta);
+}
+
+.subtitulo {
+  max-width: 40rem;
+  margin: 0.75rem auto 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--cinza);
+}
+
+.acao {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 999px;
+  background: var(--vermelho);
+  color: var(--branco);
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: var(--sombra-cartao);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.botao:hover {
+  background: var(--vermelho-escuro);
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .botao {
+    transition: none;
+  }
+
+  .botao:hover {
+    transform: none;
+  }
+}
+
+/* Esconde visualmente mas mantém acessível a leitores de tela */
+.oculto-visualmente {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---------- Listas (remove marcadores, mantém a semântica de lista) ---------- */
+
+ul[role="list"] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Imagens (ícones, fotos, logos) ---------- */
+
+.icone {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.icone-beneficio {
+  margin: 0 auto 1rem;
+}
+
+.foto-historia {
+  display: block;
+  width: 6rem;
+  flex-shrink: 0;
+  align-self: stretch;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+.logo-patrocinador {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.logo-patrocinador--grande {
+  margin: 0 auto;
+  max-width: 13.75rem;
+}
+
+.patrocinador .logo-patrocinador {
+  max-height: 4rem;
+  width: auto;
+}
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+
+.secao-hero {
+  position: relative;
+  min-height: 22rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--vermelho);
+  background-image: linear-gradient(to right, var(--vermelho) 0%, var(--vermelho) 42%, rgba(225, 31, 38, 0.35) 68%, rgba(225, 31, 38, 0) 100%), url("assets/fotos/hero.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right center;
+  color: var(--branco);
+}
+
+.secao-hero a:focus-visible {
+  outline-color: var(--branco);
+}
+
+.hero-conteudo {
+  max-width: 28rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.hero-titulo {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.15;
+  color: var(--branco);
+}
+
+.hero-subtitulo {
+  margin: 0.75rem 0 0;
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--branco);
+}
+
+.hero-texto {
+  margin: 0.75rem 0 0;
+  max-width: 22rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.botao-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.botao-hero img {
+  display: block;
+}
+
+.botao-hero--primario {
+  background: var(--branco);
+  color: var(--vermelho);
+}
+
+.botao-hero--secundario {
+  background: transparent;
+  color: var(--branco);
+  border: 2px solid var(--branco);
+}
+
+/* ==========================================================
+   0) DESTAQUES
+   ========================================================== */
+
+.lista-destaques {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 55rem;
+  margin: 0 auto;
+}
+
+.destaque {
+  text-align: center;
+}
+
+.icone-destaque {
+  max-width: 2.25rem;
+  max-height: 2.25rem;
+  width: auto;
+  height: auto;
+  margin: 0 auto 0.75rem;
+}
+
+.titulo-destaque {
+  margin: 0 0 0.375rem;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--tinta);
+}
+
+.destaque p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--cinza);
+}
+
+.frase-destaque {
+  margin: 2rem auto 0;
+  max-width: 30rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--tinta);
+}
+
+/* ==========================================================
+   0.5) POR QUE DOAR SANGUE
+   ========================================================== */
+
+.motivo-doacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 55rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.texto-motivo .rotulo {
+  margin: 0 0 0.5rem;
+}
+
+.texto-motivo .titulo {
+  margin: 0 0 1rem;
+}
+
+.texto-motivo p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--cinza);
+}
+
+.ilustracao-motivo {
+  display: block;
+  width: 100%;
+  max-width: 17rem;
+  height: auto;
+  flex-shrink: 0;
+}
+
+/* ==========================================================
+   1) REQUISITOS
+   ========================================================== */
+
+.lista-requisitos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 1rem;
+  max-width: 40rem;
+  margin: 2.5rem auto 0;
+}
+
+.requisito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.requisito p {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--tinta);
+}
+
+.circulo-icone {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: var(--vermelho-claro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.875rem;
+}
+
+.icone-requisito {
+  max-width: 2.5rem;
+  max-height: 2.5rem;
+  width: auto;
+  height: auto;
+}
+
+/* ==========================================================
+   2) BENEFÍCIOS
+   ========================================================== */
+
+.secao-beneficios {
+  background: var(--fundo-alt);
+}
+
+.lista-beneficios {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 1.25rem;
+  max-width: 55rem;
+  margin: 2.5rem auto 0;
+}
+
+.beneficio {
+  text-align: center;
+}
+
+.titulo-beneficio {
+  margin: 0 0 0.5rem;
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--tinta);
+}
+
+.beneficio p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--cinza);
+}
+
+/* ==========================================================
+   3) HISTÓRIAS
+   ========================================================== */
+
+.lista-historias {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 55rem;
+  margin: 2.5rem auto 0;
+}
+
+.historia {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 1.25rem;
+  text-align: left;
+  height: 100%;
+  padding: 1.5rem 1.25rem;
+  border-radius: var(--raio-md);
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  box-shadow: var(--sombra-cartao);
+}
+
+.conteudo-historia {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.categoria-historia {
+  margin: 0 0 0.5rem;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--vermelho);
+}
+
+.depoimento {
+  margin: 0;
+}
+
+.depoimento p {
+  margin: 0 0 0.625rem;
+  font-size: 0.9375rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--tinta);
+}
+
+.depoimento footer {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--cinza);
+}
+
+.depoimento cite {
+  font-style: normal;
+}
+
+/* ==========================================================
+   4) PATROCINADORES
+   ========================================================== */
+
+.patrocinador-destaque {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 45rem;
+  margin: 2.5rem auto 0;
+  text-align: center;
+}
+
+.texto-patrocinador h3 {
+  margin: 0 0 0.5rem;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--tinta);
+}
+
+.texto-patrocinador p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--cinza);
+}
+
+.lista-patrocinadores {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 55rem;
+  margin: 3rem auto 0;
+}
+
+.patrocinador {
+  text-align: center;
+}
+
+.patrocinador p {
+  margin: 1rem auto 0;
+  max-width: 20rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--cinza);
+}
+
+/* ==========================================================
+   Responsivo — Desktop (>= 48rem / 768px)
+   ========================================================== */
+
+@media (min-width: 48rem) {
+  .secao {
+    padding: 6rem 0;
+  }
+
+  .secao-hero {
+    min-height: 30rem;
+  }
+
+  .hero-titulo {
+    font-size: 2.75rem;
+  }
+
+  .hero-subtitulo {
+    font-size: 1.375rem;
+  }
+
+  .titulo {
+    font-size: 2.5rem;
+  }
+
+  .lista-destaques {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .lista-requisitos {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: none;
+  }
+
+  .lista-beneficios {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .lista-historias {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .motivo-doacao {
+    flex-direction: row;
+    text-align: left;
+    gap: 3rem;
+  }
+
+  .patrocinador-destaque {
+    flex-direction: row;
+    text-align: left;
+    gap: 2.5rem;
+  }
+
+  .logo-patrocinador--grande {
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .texto-patrocinador p {
+    text-align: left;
+  }
+
+  .lista-patrocinadores {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

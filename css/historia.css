@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'MuseoModerno', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+/* TÍTULO */
+.title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.title h1 {
+    font-size: 48px;
+    color: #c41e3a;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.divider-line {
+    width: 40px;
+    height: 2px;
+    background-color: #c41e3a;
+}
+
+.heart {
+    color: #c41e3a;
+    font-size: 20px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* GRID DE CARDS */
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.story-card {
+    display: flex;
+    border: 2px solid #999;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.story-image {
+    width: 200px;
+    height: 240px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.story-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.quote-mark {
+    font-size: 36px;
+    color: #c41e3a;
+    font-weight: bold;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.story-text {
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.story-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.story-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.story-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #c41e3a;
+    margin-bottom: 3px;
+}
+
+.story-detail {
+    font-size: 13px;
+    color: #999;
+}
+
+.heart-icon {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #c41e3a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c41e3a;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.heart-icon:hover {
+    background-color: #c41e3a;
+    color: white;
+}
+
+/* SEÇÃO DE CONVITE */
+.invitation-section {
+    text-align: center;
+    padding: 60px 40px;
+    background-color: #fff;
+}
+
+.invitation-title {
+    font-size: 36px;
+    color: #c41e3a;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.invitation-text {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.email-button {
+    background-color: #c41e3a;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.email-button:hover {
+    background-color: #a01830;
+}
+
+.email-icon {
+    font-size: 18px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .stories-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .container {
+        padding: 40px 20px;
+    }
+
+    .title h1 {
+        font-size: 32px;
+    }
+
+    .story-card {
+        flex-direction: column;
+    }
+
+    .story-image {
+        width: 100%;
+        height: 250px;
+    }
+
+    .invitation-title {
+        font-size: 28px;
+    }
+}

@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 'MuseoModerno', sans-serif;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+.conteudoPrincipal {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.home {
+  background-image: url(../assets/img/Fundo-Vermelho.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.containerUm {
+  padding: 81px 0 141px 93px;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  padding-bottom: 12px;
+  gap: 18px;
+}
+
+.navBar a {
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+
+.containerUm h1 {
+  color: #ffffff;
+  font-size: 3.75rem;
+  padding-bottom: 12px;
+}
+
+.containerUm p {
+  color: #ffffff;
+  font-size: 1.25rem;
+}
+
+.requisitos {
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.requisitoBasico {
+  padding: 62px 0 54px 0;
+}
+
+.requisitoBasico h2 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.requisitoBasico span {
+  color: #dd1d27;
+}
+
+.requisitoBasico p {
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.containerDois {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 85px;
+  cursor: pointer;
+}
+
+.items p {
+  font-size: 1.25rem;
+}
+
+.outrosCriterios {
+  margin-top: 62px;
+  margin-bottom: 49px;
+}
+
+.outrosCriterios h2 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.outrosCriterios span {
+  color: #dd1d27;
+}
+
+.accordion {
+  max-width: 95%;
+  margin: 0 auto;
+  padding: 47px 34px;
+  border-radius: 11px;
+  border: 1px solid #8b8b8b;
+  box-shadow: 0 0 4px #8b8b8b;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 34px;
+  column-gap: 60px;
+}
+
+.accordionContent {
+  max-width: 100%;
+}
+
+.accordionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 700;
+  gap: 26px;
+}
+
+.descricao {
+  font-size: 1rem;
+  padding-left: 78px;
+  opacity: 0;
+  height: 0;
+  transition: opacity 0.3s;
+  overflow: hidden;
+}
+
+.descricao.active {
+  height: 100%;
+  opacity: 1;
+}
+
+.itemSeis {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.itemSete {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.itemOito {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.itemNove {
+  grid-column: 2;
+  grid-row: 4;
+}
+
+.itemDez {
+  grid-column: 2;
+  grid-row: 5;
+}
+
+.arrow {
+  transition: transform 0.2s linear;
+}
+
+.accordionContent:has(.active) .arrow {
+  transform: rotate(180deg);
+}
+
+.duvidas {
+  max-width: 85%;
+  margin: 62px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.duvidasHeader {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.duvidasHeader span {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.duvidasHeader p {
+  font-size: 1rem;
+}
+
+.btnWhatsApp {
+  display: inline-flex;
+  gap: 14px;
+  border: none;
+  padding: 10px 23px 16px 23px;
+  border-radius: 11px;
+  background-color: #c00000;
+  transition: 0.3s;
+}
+
+.btnWhatsApp a {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.btnWhatsApp:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+  .home{
+    height: 380px;
+  }
+  
+  .containerUm {
+    padding: 0;
+    text-align: left;
+  }
+
+  .navBar {
+    display: none;
+  }
+
+  .requisitoBasico h2 {
+    font-size: 2rem;
+  }
+
+  .requisitoBasico p {
+    font-size: 1.25rem;
+  }
+
+  .outrosCriterios h2 {
+    font-size: 2rem;
+  }
+
+  .accordion {
+    width: 90%;
+    grid-template-columns: 1fr;
+  }
+
+  .itemSeis {
+    grid-column: 1;
+    grid-row: 6;
+  }
+
+  .itemSete {
+    grid-column: 1;
+    grid-row: 7;
+  }
+
+  .itemOito {
+    grid-column: 1;
+    grid-row: 8;
+  }
+
+  .itemNove {
+    grid-column: 1;
+    grid-row: 9;
+  }
+
+  .itemDez {
+    grid-column: 1;
+    grid-row: 10;
+  }
+
+  .header {
+    font-size: 1.25rem;
+  }
+
+  .descricao {
+    font-size: 1rem;
+  }
+
+  .duvidas {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 700px) {
+  .home {
+    height: 480px;
+  }
+
+  .requisitoBasico h2 {
+    font-size: 1.5rem;
+  }
+
+  .items img {
+    height: 80px;
+  }
+
+  .outrosCriterios h2 {
+    font-size: 1.5rem;
+  }
+
+  .accordion {
+    padding: 0;
+    row-gap: 16px;
+  }
+
+  .accordionContent {
+    padding: 6px;
+  }
+
+  .header {
+    font-size: 1rem;
+    gap: 10px;
+  }
+
+  .header img {
+    height: 35px;
+  }
+
+  .descricao {
+    font-size: 1rem;
+    padding: 6px;
+  }
+
+  .duvidasHeader {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .btnWhatsApp a {
+    font-size: 1rem;
+  }
+}
