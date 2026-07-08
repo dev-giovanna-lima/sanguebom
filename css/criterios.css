@@ -42,6 +42,10 @@ body {
   font-size: 0.875rem;
 }
 
+.navBar a:hover{
+  border-bottom: 1px solid #ffffff;
+}
+
 .containerUm h1 {
   color: #ffffff;
   font-size: 3.75rem;
@@ -339,7 +343,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    height: 220px;
+    height: 260px;
     width: 100%;
     margin-top: 40px;
   }
@@ -349,7 +353,7 @@ body {
   }
 
   .containerUm p{
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .requisitoBasico h2 {
