@@ -27,7 +27,7 @@ body {
 }
 
 .containerUm {
-  padding: 81px 0 141px 93px;
+  padding: 81px 0 141px 78px;
 }
 
 .navBar {
@@ -59,7 +59,7 @@ body {
 }
 
 .requisitoBasico {
-  padding: 62px 0 54px 0;
+  padding: 62px 0 56px 0;
 }
 
 .requisitoBasico h2 {
@@ -89,6 +89,10 @@ body {
   font-size: 1.25rem;
 }
 
+.items img {
+  height: 90px;
+}
+
 .outrosCriterios {
   margin-top: 62px;
   margin-bottom: 49px;
@@ -109,7 +113,6 @@ body {
   padding: 47px 34px;
   border-radius: 11px;
   border: 1px solid #8b8b8b;
-  box-shadow: 0 0 4px #8b8b8b;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   row-gap: 34px;
@@ -226,14 +229,13 @@ body {
 }
 
 .btnWhatsApp:hover {
-  transform: scale(1.1);
+  background-color: #dd1d27;
 }
 
 @media (max-width: 1024px) {
   .home {
-    display: flex;
-    align-items: center;
-    height: 380px;
+    padding-top: 50px;
+    height: 360px;
   }
 
   .containerUm {
@@ -242,11 +244,11 @@ body {
     text-align: left;
   }
 
-  .containerUm h1{
-    font-size: 3rem;
+  .containerUm h1 {
+    font-size: 2.4rem;
   }
 
-  .containerUm p{
+  .containerUm p {
     font-size: 1rem;
   }
 
@@ -255,15 +257,23 @@ body {
   }
 
   .requisitoBasico h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .requisitoBasico p {
-    font-size: 1.25rem;
+    font-size: 1rem;
+  }
+
+  .items img {
+    height: 80px;
+  }
+
+  .items p {
+    font-size: 1rem;
   }
 
   .outrosCriterios h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .accordion {
@@ -297,7 +307,7 @@ body {
   }
 
   .header {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 
   .descricao {
@@ -312,7 +322,34 @@ body {
 
 @media (max-width: 700px) {
   .home {
-    height: 480px;
+    background-image: none;
+    background-color: #b50101;
+    height: auto;
+  }
+
+  .containerUm {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px 50px 0;
+  }
+
+  .containerUm::after {
+    content: '';
+    background-image: url('../assets/img/Intersect.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 220px;
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .containerUm h1{
+    font-size: 2.5rem;
+  }
+
+  .containerUm p{
+    font-size: 1.2rem;
   }
 
   .requisitoBasico h2 {
@@ -323,16 +360,23 @@ body {
     height: 80px;
   }
 
+  .items p {
+    font-size: 1.25rem;
+  }
+
   .outrosCriterios h2 {
     font-size: 1.5rem;
   }
 
   .accordion {
+    border: none;
     padding: 0;
     row-gap: 16px;
   }
 
   .accordionContent {
+    border: 1px solid #8b8b8b;
+    border-radius: 15px;
     padding: 6px;
   }
 
