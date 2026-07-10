@@ -220,13 +220,13 @@ body {
   display: inline-flex;
   gap: 14px;
   border: none;
-  padding: 10px 23px 16px 23px;
+  padding: 12px 23px;
   border-radius: 11px;
   background-color: #c00000;
   transition: 0.3s;
 }
 
-.btnWhatsApp a {
+.btnWhatsApp p {
   color: #ffffff;
   font-size: 1.25rem;
   font-weight: 700;
@@ -403,7 +403,7 @@ body {
     text-align: center;
   }
 
-  .btnWhatsApp a {
+  .btnWhatsApp p {
     font-size: 1rem;
   }
 }
