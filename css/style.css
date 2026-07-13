@@ -29,6 +29,7 @@ html {
 }
 
 body {
+  padding-top: 130px;
   margin: 0;
   font-family: var(--fonte-texto);
   color: var(--tinta);
@@ -44,6 +45,66 @@ a:focus-visible,
 button:focus-visible {
   outline: 3px solid var(--vermelho-escuro);
   outline-offset: 3px;
+}
+
+.header {
+  top: 0;
+  left: 0;
+  z-index: 100;
+  position: fixed;
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 130px;
+}
+.Doar {
+  padding-left: 100px;
+}
+.logo {
+  padding-right: 200px;
+  margin-top: -15px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top:1.5rem ;
+  padding-bottom: 1.5rem;
+}
+.navbar a, span{
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-family: var(--fonte-titulo);
+}
+.navbar a:hover {
+  transition: 0.2s;
+ color: var(--vermelho);
+ border-bottom: 2px solid var(--vermelho);
+}
+.navbar .start {
+  color: var(--vermelho); 
+  text-decoration: none;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--vermelho);
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.5rem;
+}
+.Doar img {
+  margin: 7px 6px 0 0;
+}
+.header div, a, span {
+ text-decoration: none !important;
+}
+
+.Doar {
+  color: #FFFFFF;
+  margin-left: 70px;
+  border-radius: 12px;
+  background-color: #E11F26;
+  padding: 12px 18px;
 }
 
 .contentor {
@@ -615,4 +676,127 @@ ul[role="list"] {
   .lista-patrocinadores {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+.cta-doar {
+  background-color: #C10000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 40px 60px;
+  color: #fff;
+  font-family: var(--fonte-titulo)
+}
+
+
+.cta-doar__texto p {
+  margin-top: 8px;
+  opacity: 0.9;
+}
+
+.btn-doar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.footer {
+  font-family: var(--fonte-titulo);
+  background-color: #8C8C8C;
+  color: #fff;
+  padding: 40px 60px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer__sobre {
+  max-width: 260px;
+}
+
+.footer__sobre img {
+  height: 50px;
+  margin-bottom: 16px;
+}
+
+.footer__sobre p {
+  opacity: 0.9;
+}
+
+.footer__links ul,
+.footer__institucional ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+}
+
+.footer__links li,
+.footer__institucional li {
+  margin-bottom: 10px;
+}
+
+.footer__links a,
+.footer__institucional a {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.footer__links a:hover,
+.footer__institucional a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.footer__contato ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+}
+
+.footer__contato li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.footer__contato img {
+  width: 22px;
+  height: 22px;
+}
+
+.footer__contato a {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.footer__redes {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.footer__redes img {
+  width: 32px;
+  height: 32px;
+}
+
+.footer__copyright {
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 16px;
+  margin-top: 24px;
+  opacity: 0.8;
 }
