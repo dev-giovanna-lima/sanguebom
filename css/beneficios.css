@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'MuseoModerno', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+section{
+    width:1200px;
+    margin:auto;
+    padding:80px 0;
+}
+
+.enunciado{
+    text-align:center;
+}
+
+.texto1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:14px;
+  margin-bottom:15px;
+  color: #DD1D27;
+}
+
+.texto2 {
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.texto2 span{
+  color: #DD1D27;
+}
+
+.divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:20px 0;
+}
+
+.divider img{
+    width:140px;
+}
+
+.texto3{
+    width:650px;
+    margin:auto;
+    line-height:28px;
+    color:#333;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:35px;
+    margin-top:70px;
+}
+
+.quadros{
+    width:330px;
+    min-height:360px;
+    border:1px solid #d8d8d8;
+    border-radius:10px;
+    padding:35px;
+    transition:.3s;
+    background:#fff;
+}
+
+.quadros:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.titulo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.titulo img{
+    width:28px;
+}
+
+.titulo.card h4{
+    font-size:20px;
+}
+
+.line{
+    width:45px;
+    height:2px;
+    background:#920000;
+    margin:25px 0;
+}
+
+.text5{
+    color:#333;
+    text-align: justify;
+    line-height:28px;
+    font-size:16px;
+}
