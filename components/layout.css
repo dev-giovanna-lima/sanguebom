@@ -1,0 +1,239 @@
+/* ==========================================================
+   Layout compartilhado — Cabeçalho (menu) + Rodapé
+   Estilos isolados para os componentes injetados por js/layout.js.
+   Seletores restritos a .header / .footer para não afetar
+   o CSS próprio de cada página.
+   ========================================================== */
+
+.header,
+.footer,
+.footer *,
+.cta-doar,
+.cta-doar * {
+  box-sizing: border-box;
+}
+
+/* Blindagem: neutraliza resets globais agressivos de algumas páginas
+   (ex.: `* { text-transform: capitalize; overflow-x: hidden }`) que
+   vazariam para dentro do componente injetado. */
+.header,
+.header *,
+.footer,
+.footer *,
+.cta-doar,
+.cta-doar * {
+  text-transform: none;
+  overflow: visible;
+}
+
+/* ---------- Cabeçalho / Menu ---------- */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-family: "MuseoModerno", sans-serif;
+}
+
+.header a,
+.header span,
+.header div {
+  text-decoration: none;
+}
+
+.header a {
+  color: inherit;
+}
+
+.logo {
+  padding-right: 200px;
+  margin-top: -15px;
+}
+
+.logo a {
+  display: inline-block;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.5rem;
+}
+
+.navbar a,
+.navbar span {
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-family: "MuseoModerno", sans-serif;
+  color: #1b1b1b;
+}
+
+.navbar a:hover {
+  transition: 0.2s;
+  color: #e11f26;
+  border-bottom: 2px solid #e11f26;
+}
+
+.navbar .start {
+  color: #e11f26;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #e11f26;
+}
+
+.Doar {
+  color: #ffffff;
+  margin-left: 70px;
+  border-radius: 12px;
+  background-color: #e11f26;
+  padding: 12px 18px;
+}
+
+.Doar a {
+  display: inline-flex;
+  align-items: center;
+  color: #ffffff;
+}
+
+.Doar img {
+  margin: 0 6px 0 0;
+}
+
+/* ---------- Rodapé ---------- */
+
+.footer {
+  font-family: "MuseoModerno", sans-serif;
+  background-color: #8c8c8c;
+  color: #fff;
+  padding: 40px 60px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer__sobre {
+  max-width: 260px;
+}
+
+.footer__sobre img {
+  height: 50px;
+  margin-bottom: 16px;
+}
+
+.footer__sobre p {
+  opacity: 0.9;
+}
+
+.footer__links ul,
+.footer__institucional ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+}
+
+.footer__links li,
+.footer__institucional li {
+  margin-bottom: 10px;
+}
+
+.footer__links a,
+.footer__institucional a {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.footer__links a:hover,
+.footer__institucional a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.footer__contato ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+}
+
+.footer__contato li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.footer__contato img {
+  width: 22px;
+  height: 22px;
+}
+
+.footer__contato a {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.footer__redes {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.footer__redes img {
+  width: 32px;
+  height: 32px;
+}
+
+.footer__copyright {
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 16px;
+  margin-top: 24px;
+  opacity: 0.8;
+}
+
+/* ---------- Chamada "Já conferiu tudo?" (CTA) ---------- */
+
+.cta-doar {
+  background-color: #c10000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 40px 60px;
+  color: #fff;
+  font-family: "MuseoModerno", sans-serif;
+}
+
+.cta-doar h2 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.cta-doar__texto p {
+  margin: 8px 0 0;
+  opacity: 0.9;
+}
+
+.btn-doar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 11px;
+  white-space: nowrap;
+}
+
+.btn-doar img {
+  width: 22px;
+  height: auto;
+}
