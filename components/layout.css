@@ -31,9 +31,14 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 1.05rem 1.4rem;
+  box-sizing: border-box;
   font-family: "MuseoModerno", sans-serif;
 }
 
@@ -48,7 +53,7 @@
 }
 
 .logo {
-  padding-right: 200px;
+  padding-right: 0;
   margin-top: -15px;
 }
 
@@ -56,16 +61,22 @@
   display: inline-block;
 }
 
+.logo img {
+  width: 116px;
+  height: auto;
+}
+
 .navbar {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3.5rem;
+  flex-wrap: wrap;
+  gap: clamp(0.75rem, 2vw, 2rem);
 }
 
 .navbar a,
 .navbar span {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 400;
   font-family: "MuseoModerno", sans-serif;
   color: #1b1b1b;
@@ -85,20 +96,24 @@
 
 .Doar {
   color: #ffffff;
-  margin-left: 70px;
+  margin-left: 0;
   border-radius: 12px;
   background-color: #e11f26;
-  padding: 12px 18px;
+  padding: 10px 14px;
+  white-space: nowrap;
 }
 
 .Doar a {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   color: #ffffff;
 }
 
 .Doar img {
-  margin: 0 6px 0 0;
+  width: 31px;
+  height: auto;
+  margin: 0 5px 0 0;
 }
 
 /* ---------- Rodapé ---------- */

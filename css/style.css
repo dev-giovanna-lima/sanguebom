@@ -46,23 +46,29 @@ button:focus-visible {
   outline: 3px solid var(--vermelho-escuro);
   outline-offset: 3px;
 }
-.Doar {
-  padding-left: 100px;
-}
 .logo {
-  padding-right: 200px;
+  padding-right: 0;
   margin-top: -15px;
+}
+.logo img {
+  width: 116px;
+  height: auto;
 }
 .header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding-top:1.5rem ;
-  padding-bottom: 1.5rem;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 1.05rem 1.4rem;
+  box-sizing: border-box;
 }
 .navbar a, span{
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-family: var(--fonte-titulo);
 }
 .navbar a:hover {
@@ -71,7 +77,7 @@ button:focus-visible {
  border-bottom: 2px solid var(--vermelho);
 }
 .navbar .start {
-  color: var(--vermelho); 
+  color: var(--vermelho);
   text-decoration: none;
   padding-bottom: 6px;
   border-bottom: 2px solid var(--vermelho);
@@ -80,10 +86,13 @@ button:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3.5rem;
+  flex-wrap: wrap;
+  gap: clamp(0.75rem, 2vw, 2rem);
 }
 .Doar img {
-  margin: 7px 6px 0 0;
+  width: 31px;
+  height: auto;
+  margin: 0 5px 0 0;
 }
 .header div, a, span {
  text-decoration: none !important;
@@ -91,10 +100,17 @@ button:focus-visible {
 
 .Doar {
   color: #FFFFFF;
-  margin-left: 70px;
+  margin-left: 0;
   border-radius: 12px;
   background-color: #E11F26;
-  padding: 12px 18px;
+  padding: 10px 14px;
+  white-space: nowrap;
+}
+.Doar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
 }
 
 .contentor {
