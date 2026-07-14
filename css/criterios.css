@@ -40,6 +40,7 @@ body {
 .navBar a {
   color: #ffffff;
   font-size: 0.875rem;
+  transition: 0.2 ease;
 }
 
 .navBar a:hover {
