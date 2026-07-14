@@ -5,6 +5,10 @@
    o CSS próprio de cada página.
    ========================================================== */
 
+html {
+  scroll-behavior: smooth;
+}
+
 .header,
 .footer,
 .footer *,

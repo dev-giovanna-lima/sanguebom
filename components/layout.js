@@ -41,7 +41,7 @@
     { key: "locais", href: "#", label: "Locais de Doação" },
     { key: "historias", href: pagesDir + "historia.html", label: "Histórias" },
     { key: "patrocinio", href: pagesDir + "patrocinadores.html", label: "Patrocinio" },
-    { key: "contato", href: "#", label: "Contato" }
+    { key: "contato", href: "#footer", label: "Contato" }
   ];
 
   var navHTML = navItems
@@ -89,7 +89,7 @@
     '      <li><a href="#">Política de Privacidade</a></li>' +
     '      <li><a href="#">Termos de Uso</a></li>' +
     '      <li><a href="#">Transparência</a></li>' +
-    '      <li><a href="#">Contato</a></li>' +
+    '      <li><a href="#footer">Contato</a></li>' +
     "    </ul>" +
     "  </nav>" +
     '  <div class="footer__contato">' +
