@@ -358,6 +358,11 @@ body {
     font-size: 1.5rem;
   }
 
+  .containerDois {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .items img {
     height: 80px;
   }
