@@ -27,7 +27,7 @@ body {
 }
 
 .containerUm {
-  padding: 81px 0 141px 78px;
+  padding: 116px 0 141px 78px;
 }
 
 .navBar {
@@ -40,6 +40,7 @@ body {
 .navBar a {
   color: #ffffff;
   font-size: 0.875rem;
+  transition: 0.2 ease;
 }
 
 .navBar a:hover {
@@ -138,7 +139,7 @@ body {
   cursor: pointer;
 }
 
-.header {
+.headerA {
   display: flex;
   align-items: center;
   font-size: 1rem;
@@ -220,7 +221,7 @@ body {
   display: inline-flex;
   gap: 14px;
   border: none;
-  padding: 12px 23px;
+  padding: 12px 24px;
   border-radius: 11px;
   background-color: #c00000;
   transition: 0.3s ease;
@@ -255,10 +256,6 @@ body {
 
   .containerUm p {
     font-size: 1rem;
-  }
-
-  .navBar {
-    display: none;
   }
 
   .requisitoBasico h2 {
@@ -311,7 +308,7 @@ body {
     grid-row: 10;
   }
 
-  .header {
+  .headerA {
     font-size: 1.2rem;
   }
 
@@ -361,6 +358,11 @@ body {
     font-size: 1.5rem;
   }
 
+  .containerDois {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .items img {
     height: 80px;
   }
@@ -385,12 +387,12 @@ body {
     padding: 6px;
   }
 
-  .header {
+  .headerA {
     font-size: 1rem;
     gap: 10px;
   }
 
-  .header img {
+  .headerA img {
     height: 35px;
   }
 
