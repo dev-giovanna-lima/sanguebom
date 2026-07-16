@@ -28,17 +28,18 @@
     if (/beneficios/.test(p)) return "beneficios";
     if (/hist[oó]ria/.test(p)) return "historias";
     if (/patrocinadores/.test(p)) return "patrocinio";
+    if (/locais/.test(p)) return "locais";
     return "inicio";
   })();
 
   // Itens do menu. Cada item leva à sua própria página; o destaque
-  // (classe "start") vai para a página atual. Contato e Locais de
-  // Doação ficam sem função por enquanto.
+  // (classe "start") vai para a página atual. Contato fica sem
+  // função por enquanto.
   var navItems = [
     { key: "inicio", href: root + "index.html", label: "Início" },
     { key: "quem", href: pagesDir + "criterios.html", label: "Quem Pode Doar" },
     { key: "beneficios", href: pagesDir + "beneficios.html", label: "Benefícios" },
-    { key: "locais", href: "#", label: "Locais de Doação" },
+    { key: "locais", href: pagesDir + "locais.html", label: "Locais de Doação" },
     { key: "historias", href: pagesDir + "historia.html", label: "Histórias" },
     { key: "patrocinio", href: pagesDir + "patrocinadores.html", label: "Patrocinio" },
     { key: "contato", href: "#footer", label: "Contato" }
@@ -78,7 +79,7 @@
     "    <ul>" +
     '      <li><a href="' + pagesDir + 'criterios.html">Quem Pode Doar</a></li>' +
     '      <li><a href="' + pagesDir + 'beneficios.html">Benefícios</a></li>' +
-    '      <li><a href="#">Locais de Doação</a></li>' +
+    '      <li><a href="' + pagesDir + 'locais.html">Locais de Doação</a></li>' +
     '      <li><a href="' + pagesDir + 'historia.html">Histórias que Inspiram</a></li>' +
     '      <li><a href="' + pagesDir + 'patrocinadores.html">Patrocínio</a></li>' +
     "    </ul>" +
