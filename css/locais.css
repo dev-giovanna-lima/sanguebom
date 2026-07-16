@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+  --vermelho: #e11f26;
+  --vermelho-escuro: #b0181d;
+  --cinza: #595e68;
+  --cinza-claro: #8c8c8c;
+  --borda: #ececec;
+  --fundo-alt: #fafafa;
+  --verde: #1f8a4c;
+  --raio-md: 16px;
+  --sombra-cartao: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
 * {
   text-decoration: none;
   box-sizing: border-box;
@@ -18,14 +30,423 @@ body {
   max-width: 1400px;
 }
 
+.oculto-visualmente {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 .locais {
   margin: 0 auto;
   max-width: 90%;
-  padding: 62px 0;
+  padding: 56px 0 80px;
 }
 
-.containerBusca {
+.locais-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ---------- Barra de busca / filtro / geolocalização ---------- */
+
+.locais-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.locais-busca,
+.locais-filtro__botao {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-md);
+  padding: 12px 18px;
+  background: #ffffff;
+  color: var(--cinza);
+}
+
+.locais-busca {
+  flex: 0 1 340px;
+}
+
+.locais-busca input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #1b1b1b;
+}
+
+.locais-busca input::placeholder {
+  color: var(--cinza-claro);
+}
+
+.locais-busca__icone {
+  color: var(--vermelho);
+  display: inline-flex;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.locais-filtro {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.locais-filtro__botao {
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #1b1b1b;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.15s ease;
+}
+
+.locais-filtro__botao:hover {
+  border-color: var(--cinza-claro);
+}
+
+.locais-filtro[data-aberto="true"] .locais-filtro__botao {
+  border-color: var(--vermelho);
+}
+
+.locais-filtro__icone {
+  color: var(--cinza-claro);
+  display: inline-flex;
+  transition: transform 0.15s ease;
+}
+
+.locais-filtro[data-aberto="true"] .locais-filtro__icone {
+  transform: rotate(180deg);
+}
+
+.locais-filtro__lista {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 20;
+  min-width: 100%;
+  background: #ffffff;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-md);
+  box-shadow: var(--sombra-cartao);
+  padding: 6px;
+  white-space: nowrap;
+}
+
+.locais-filtro__lista li {
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #1b1b1b;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.locais-filtro__lista li:hover {
+  background-color: var(--fundo-alt);
+}
+
+.locais-filtro__lista li.is-selected {
+  background-color: var(--vermelho);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.locais-geo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: var(--vermelho);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 4px;
+  white-space: nowrap;
+}
+
+.locais-geo:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Lista + Mapa ---------- */
+
+.locais-painel {
+  display: grid;
+  grid-template-columns: minmax(300px, 380px) 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.locais-lista {
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-md);
+  box-shadow: var(--sombra-cartao);
+  padding: 24px;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+}
+
+.locais-lista h2 {
+  flex: 0 0 auto;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1b1b1b;
+  margin-bottom: 12px;
+}
+
+.locais-lista__itens {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding-right: 8px;
+  margin-right: -8px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--cinza-claro) transparent;
+}
+
+.locais-lista__itens::-webkit-scrollbar {
+  width: 6px;
+}
+
+.locais-lista__itens::-webkit-scrollbar-thumb {
+  background-color: var(--cinza-claro);
+  border-radius: 999px;
+}
+
+.locais-lista__itens::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.locais-lista__itens li {
+  border-top: 1px solid var(--borda);
+}
+
+.locais-lista__itens li:last-child {
+  border-bottom: 1px solid var(--borda);
+}
+
+.locais-lista__itens a {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 4px;
+  color: inherit;
+  transition: background-color 0.15s ease;
+}
+
+.locais-lista__itens a:hover {
+  background-color: var(--fundo-alt);
+}
+
+.locais-pin {
+  flex: 0 0 auto;
+  color: var(--vermelho);
+  margin-top: 2px;
+}
+
+.locais-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.locais-info strong {
+  font-size: 0.95rem;
+  color: #1b1b1b;
+}
+
+.locais-endereco {
+  font-size: 0.82rem;
+  color: var(--cinza);
+  line-height: 1.4;
+}
+
+.locais-meta {
+  font-size: 0.8rem;
+  color: var(--cinza-claro);
+}
+
+.locais-status {
+  color: var(--verde);
+}
+
+.locais-seta {
+  flex: 0 0 auto;
+  color: var(--cinza-claro);
+  margin-top: 2px;
+}
+
+.locais-vazio {
+  padding: 16px 4px;
+  color: var(--cinza-claro);
+  font-size: 0.9rem;
   text-align: center;
-  color: #595e68;
-  font-size: 1.125rem;
+}
+
+.locais-btn-todas {
+  flex: 0 0 auto;
+  margin-top: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--vermelho);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  padding: 14px 20px;
+  transition: background-color 0.2s ease;
+}
+
+.locais-btn-todas:hover {
+  background-color: var(--vermelho-escuro);
+}
+
+/* ---------- Popup "Ver todas as unidades" ---------- */
+
+.locais-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(27, 27, 27, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.locais-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.locais-modal__painel {
+  width: 100%;
+  max-width: 640px;
+  max-height: min(80vh, 720px);
+  background: #ffffff;
+  border-radius: var(--raio-md);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(32px) scale(0.98);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.locais-modal.is-open .locais-modal__painel {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.locais-modal__cabecalho {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.locais-modal__cabecalho h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1b1b1b;
+}
+
+.locais-modal__fechar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: var(--fundo-alt);
+  color: var(--cinza);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.locais-modal__fechar:hover {
+  background-color: var(--borda);
+}
+
+.locais-lista__itens--modal {
+  max-height: none;
+}
+
+/* ---------- Mapa (Google Maps) ---------- */
+
+.locais-mapa {
+  position: relative;
+  height: 420px;
+  min-height: 420px;
+  border-radius: var(--raio-md);
+  box-shadow: var(--sombra-cartao);
+  overflow: hidden;
+  background-color: #e4e9f0;
+}
+
+.locais-mapa__carregando {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cinza-claro);
+  font-size: 0.9rem;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 860px) {
+  .locais-painel {
+    grid-template-columns: 1fr;
+  }
+
+  .locais-lista {
+    height: 360px;
+  }
+
+  .locais-mapa {
+    height: 320px;
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 540px) {
+  .locais-topbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .locais-filtro,
+  .locais-geo {
+    justify-content: center;
+  }
 }

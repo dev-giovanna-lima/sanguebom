@@ -12,14 +12,106 @@
     <main class="conteudoPrincipal">
       <!-- ============================================= -->
       <!-- Busca + lista de unidades + mapa               -->
-      <!-- (conteúdo detalhado será implementado a seguir) -->
       <!-- ============================================= -->
       <section class="locais">
-        <div class="containerBusca">
-          <p>Em breve: busca por bairro/CEP, lista das unidades mais próximas e mapa interativo.</p>
+        <div class="locais-container">
+
+          <!-- Barra de busca / filtro / geolocalização -->
+          <div class="locais-topbar">
+            <form class="locais-busca" id="locais-busca-form">
+              <label class="oculto-visualmente" for="locais-busca-input">Buscar unidade por bairro, cidade ou CEP</label>
+              <input type="search" id="locais-busca-input" placeholder="Digite um bairro, cidade ou CEP" />
+              <button type="submit" class="locais-busca__icone" aria-label="Buscar">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </button>
+            </form>
+
+            <div class="locais-filtro" id="locais-filtro">
+              <button
+                type="button"
+                class="locais-filtro__botao"
+                id="locais-filtro-botao"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-label="Filtrar tipo de unidade"
+              >
+                <span id="locais-filtro-label">Todas as unidades</span>
+                <span class="locais-filtro__icone" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </span>
+              </button>
+              <ul class="locais-filtro__lista" id="locais-filtro-lista" role="listbox" hidden>
+                <li role="option" aria-selected="true" class="is-selected" data-valor="">Todas as unidades</li>
+                <li role="option" aria-selected="false" data-valor="Hemocentro">Hemocentros</li>
+                <li role="option" aria-selected="false" data-valor="Hospital">Hospitais</li>
+                <li role="option" aria-selected="false" data-valor="Banco de Sangue">Bancos de Sangue</li>
+              </ul>
+            </div>
+
+            <button type="button" class="locais-geo">
+              <span aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+              </span>
+              Usar minha localização
+            </button>
+          </div>
+
+          <!-- Lista de unidades + mapa -->
+          <div class="locais-painel">
+            <div class="locais-lista">
+              <h2>Unidades próximas</h2>
+
+              <!-- Preenchida via JS (js/locais.js → renderizarLista) com
+                   todas as unidades reais; rola só aqui dentro. -->
+              <ul class="locais-lista__itens" id="locais-lista-itens"></ul>
+
+              <a href="#" class="locais-btn-todas" id="locais-ver-todas">
+                Ver todas as unidades
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+
+            <div id="locais-map" class="locais-mapa" aria-label="Mapa com hemocentros e bancos de sangue próximos na região central de São Paulo">
+              <p class="locais-mapa__carregando">Carregando mapa…</p>
+            </div>
+          </div>
         </div>
       </section>
+
+      <!-- Popup com todas as unidades (abre ao clicar em "Ver todas as unidades") -->
+      <div class="locais-modal" id="locais-modal">
+        <div class="locais-modal__painel" role="dialog" aria-modal="true" aria-labelledby="locais-modal-titulo">
+          <div class="locais-modal__cabecalho">
+            <h2 id="locais-modal-titulo">Todas as unidades</h2>
+            <button type="button" class="locais-modal__fechar" id="locais-modal-fechar" aria-label="Fechar">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+          </div>
+          <ul class="locais-lista__itens locais-lista__itens--modal" id="locais-modal-itens"></ul>
+        </div>
+      </div>
     </main>
+    <!-- js/locais-config.js não vai para o Git (veja .gitignore); copie
+         js/locais-config.example.js e coloque sua própria chave lá. -->
+    <script src="../js/locais-config.js"></script>
+    <script src="../js/locais.js"></script>
+    <script>
+      (function () {
+        var chave = window.GOOGLE_MAPS_API_KEY;
+        if (!chave) {
+          var mapaEl = document.getElementById("locais-map");
+          if (mapaEl) {
+            mapaEl.innerHTML =
+              '<p class="locais-mapa__carregando">Mapa não configurado: crie js/locais-config.js a partir de js/locais-config.example.js com sua chave do Google Maps.</p>';
+          }
+          return;
+        }
+        var script = document.createElement("script");
+        script.src = "https://maps.googleapis.com/maps/api/js?key=" + encodeURIComponent(chave) + "&callback=initLocaisMap";
+        script.defer = true;
+        document.head.appendChild(script);
+      })();
+    </script>
     <script src="../components/layout.js" defer></script>
   </body>
 </html>
