@@ -97,20 +97,20 @@
     "    <h3>Fale Conosco</h3>" +
     "    <ul>" +
     "      <li>" +
-    '        <img width="80" height="80" src="https://img.icons8.com/ios/100/whatsapp--v1.png" alt="WhatsApp">' +
+    '        <img width="80" height="80" src="https://img.icons8.com/ios/100/ffffff/whatsapp--v1.png" alt="WhatsApp">' +
     '        <a href="tel:+5511999999999">(11) 99999-9999</a>' +
     "      </li>" +
     "      <li>" +
-    '        <img width="50" height="50" src="https://img.icons8.com/ios/70/new-post--v1.png" alt="E-mail">' +
+    '        <img width="50" height="50" src="https://img.icons8.com/ios/70/ffffff/new-post--v1.png" alt="E-mail">' +
     '        <a href="mailto:contato@sanguebom.org.br">contato@sanguebom.org.br</a>' +
     "      </li>" +
     "    </ul>" +
     '    <div class="footer__redes">' +
     '      <a href="https://facebook.com/sanguebom">' +
-    '        <img width="50" height="50" src="https://img.icons8.com/ios/50/facebook--v1.png" alt="Facebook">' +
+    '        <img width="50" height="50" src="https://img.icons8.com/ios/50/ffffff/facebook--v1.png" alt="Facebook">' +
     "      </a>" +
     '      <a href="https://instagram.com/sanguebom">' +
-    '        <img width="50" height="50" src="https://img.icons8.com/ios/50/instagram-new--v1.png" alt="Instagram">' +
+    '        <img width="50" height="50" src="https://img.icons8.com/ios/50/ffffff/instagram-new--v1.png" alt="Instagram">' +
     "      </a>" +
     "    </div>" +
     "  </div>" +
