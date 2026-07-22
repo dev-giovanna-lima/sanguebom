@@ -4,7 +4,7 @@
    ========================================================== */
 
 :root {
-  --vermelho: #E11F26;
+  --vermelho: #DD1D27;
   --vermelho-escuro: #B0181D;
   --vermelho-claro: #FDEAEA;
   --tinta: #1B1B1B;
@@ -104,7 +104,7 @@ button:focus-visible {
   color: #FFFFFF;
   margin-left: 0;
   border-radius: 12px;
-  background-color: #E11F26;
+  background-color: #DD1D27;
   padding: 10px 14px;
   white-space: nowrap;
 }
@@ -677,7 +677,7 @@ ul[role="list"] {
 }
 
 .cta-doar {
-  background-color: #C10000;
+  background-color: #DD1D27;
   display: flex;
   justify-content: space-between;
   align-items: center;

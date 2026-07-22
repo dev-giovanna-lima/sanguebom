@@ -996,7 +996,7 @@
 
   var pinIcon = {
     path: "M12 2C7.58 2 4 5.58 4 10c0 5.25 6.72 11.36 7.01 11.62a1.5 1.5 0 0 0 1.98 0C13.28 21.36 20 15.25 20 10c0-4.42-3.58-8-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z",
-    fillColor: "#e11f26",
+    fillColor: "#DD1D27",
     fillOpacity: 1,
     strokeWeight: 0,
     scale: 1.7,
@@ -1019,7 +1019,7 @@
         "<strong>" + unidade.nome + "</strong><br>" +
         '<span style="font-size:0.85rem;color:#595e68;">' + unidade.endereco + "</span><br>" +
         '<span style="font-size:0.8rem;color:#1f8a4c;">' + unidade.horario + "</span><br>" +
-        '<a href="tel:' + unidade.telefone.replace(/[^\d+]/g, "") + '" style="font-size:0.8rem;color:#e11f26;">' + unidade.telefone + "</a>" +
+        '<a href="tel:' + unidade.telefone.replace(/[^\d+]/g, "") + '" style="font-size:0.8rem;color:#DD1D27;">' + unidade.telefone + "</a>" +
       "</div>"
     );
     infoWindow.open(map, marker);

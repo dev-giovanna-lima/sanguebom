@@ -223,7 +223,7 @@ body {
   border: none;
   padding: 12px 24px;
   border-radius: 11px;
-  background-color: #c00000;
+  background-color: #DD1D27;
   transition: 0.3s ease;
 }
 
@@ -325,7 +325,7 @@ body {
 @media (max-width: 700px) {
   .home {
     background-image: none;
-    background-color: #b50101;
+    background-color: #DD1D27;
     height: auto;
   }
 
