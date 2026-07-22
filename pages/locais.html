@@ -92,27 +92,8 @@
         </div>
       </div>
     </main>
-    <!-- js/locais-config.js não vai para o Git (veja .gitignore); copie
-         js/locais-config.example.js e coloque sua própria chave lá. -->
-    <script src="../js/locais-config.js"></script>
     <script src="../js/locais.js"></script>
-    <script>
-      (function () {
-        var chave = window.GOOGLE_MAPS_API_KEY;
-        if (!chave) {
-          var mapaEl = document.getElementById("locais-map");
-          if (mapaEl) {
-            mapaEl.innerHTML =
-              '<p class="locais-mapa__carregando">Mapa não configurado: crie js/locais-config.js a partir de js/locais-config.example.js com sua chave do Google Maps.</p>';
-          }
-          return;
-        }
-        var script = document.createElement("script");
-        script.src = "https://maps.googleapis.com/maps/api/js?key=" + encodeURIComponent(chave) + "&callback=initLocaisMap";
-        script.defer = true;
-        document.head.appendChild(script);
-      })();
-    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFwHbg6IYvb1eYY-5W01_4eQHzJp5TJVE&callback=initLocaisMap" defer></script>
     <script src="../components/layout.js" defer></script>
   </body>
 </html>
