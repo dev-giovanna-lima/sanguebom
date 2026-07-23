@@ -88,21 +88,21 @@ html {
 
 .navbar a:hover {
   transition: 0.2s;
-  color: #e11f26;
-  border-bottom: 2px solid #e11f26;
+  color: #DD1D27;
+  border-bottom: 2px solid #DD1D27;
 }
 
 .navbar .start {
-  color: #e11f26;
+  color: #DD1D27;
   padding-bottom: 6px;
-  border-bottom: 2px solid #e11f26;
+  border-bottom: 2px solid #DD1D27;
 }
 
 .Doar {
   color: #ffffff;
   margin-left: 0;
   border-radius: 12px;
-  background-color: #e11f26;
+  background-color: #DD1D27;
   padding: 10px 14px;
   white-space: nowrap;
 }
@@ -218,7 +218,7 @@ html {
 /* ---------- Chamada "Já conferiu tudo?" (CTA) ---------- */
 
 .cta-doar {
-  background-color: #c10000;
+  background-color: #DD1D27;
   display: flex;
   justify-content: space-between;
   align-items: center;
